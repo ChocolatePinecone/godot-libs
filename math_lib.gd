@@ -3,7 +3,7 @@ extends Library
 # Library for math related functions
 
 
-func get_class() -> String: return "MathLib"
+func get_library_name() -> String: return "MathLib"
 
 
 # Generate a random integer with a fixed length
@@ -42,3 +42,23 @@ static func sumArray(array: Array) -> float:
 			"Array element {0} cannot be summed because it is not a number".format([elem]))
 		sum += elem
 	return sum
+
+
+# Returns the given vector with a minimum value applied (i.e. minVect(Vector2(2, 9), 4) -> Vector2(2, 4))
+# @param vector: The vector to apply the minimum to
+# @param min: The minimum value the vector may not pass
+# @result: The vector containing the minimum or higher values
+static func minVect(vector: Vector2, min: float) -> Vector2:
+	vector.x = minf(vector.x, min)
+	vector.y = minf(vector.y, min)
+	return vector
+
+
+# Returns the given vector with a maximum value applied (i.e. maxVect(Vector2(2, 9), 4) -> Vector2(4, 9))
+# @param vector: The vector to apply the maximum to
+# @param max: The maximum value the vector may not pass
+# @result: The vector containing the maximum or lower values
+static func maxVect(vector: Vector2, max: float) -> Vector2:
+	vector.x = maxf(vector.x, max)
+	vector.y = maxf(vector.y, max)
+	return vector

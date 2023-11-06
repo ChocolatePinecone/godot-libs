@@ -4,7 +4,7 @@ extends Library
 # Provides functions for converting data from one format to another
 
 
-func get_class() -> String: return "ConversionsLib"
+func get_library_name() -> String: return "ConversionsLib"
 
 
 # Converts a Dictionary and its sub-dictionaries to a json string.

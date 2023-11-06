@@ -7,7 +7,7 @@ extends Library
 enum File_Types {JSON}
 
 
-func get_class() -> String: return "FileImportLib"
+func get_library_name() -> String: return "FileImportLib"
 
 
 # Converts file data to a Dictionary containing sub-dictionaries.

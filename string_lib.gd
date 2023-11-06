@@ -2,7 +2,7 @@ class_name StringLib
 extends Library
 
 
-func get_class() -> String: return "StringLib"
+func get_library_name() -> String: return "StringLib"
 
 
 # Surrounds the given string with quotes

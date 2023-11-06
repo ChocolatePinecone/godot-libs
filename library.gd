@@ -5,12 +5,12 @@ extends Object
 
 
 # Virtual function to override. This function is needed for logging when an error occurs here
-func get_class():
-	pass
+func get_library_name() -> String:
+	return "Undefined Library"
 
 
 func _init():
-	var name = get_class()
+	var name = get_library_name()
 	assert(
 		false, 
 		("{0} is not supposed to be initialized. Please use its library functions "
