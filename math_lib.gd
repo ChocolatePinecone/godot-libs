@@ -48,9 +48,9 @@ static func sumArray(array: Array) -> float:
 # @param vector: The vector to apply the minimum to
 # @param min: The minimum value the vector may not pass
 # @result: The vector containing the minimum or higher values
-static func minVect(vector: Vector2, min: float) -> Vector2:
-	vector.x = minf(vector.x, min)
-	vector.y = minf(vector.y, min)
+static func minVect(vector: Vector2, min_amount: float) -> Vector2:
+	vector.x = minf(vector.x, min_amount)
+	vector.y = minf(vector.y, min_amount)
 	return vector
 
 
@@ -58,7 +58,7 @@ static func minVect(vector: Vector2, min: float) -> Vector2:
 # @param vector: The vector to apply the maximum to
 # @param max: The maximum value the vector may not pass
 # @result: The vector containing the maximum or lower values
-static func maxVect(vector: Vector2, max: float) -> Vector2:
-	vector.x = maxf(vector.x, max)
-	vector.y = maxf(vector.y, max)
+static func maxVect(vector: Vector2, max_amount: float) -> Vector2:
+	vector.x = maxf(vector.x, max_amount)
+	vector.y = maxf(vector.y, max_amount)
 	return vector
