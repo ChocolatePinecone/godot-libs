@@ -44,21 +44,41 @@ static func sumArray(array: Array) -> float:
 	return sum
 
 
-# Returns the given vector with a minimum value applied (i.e. minVect(Vector2(2, 9), 4) -> Vector2(2, 4))
+# Returns the given vector with the lowest given values applied (i.e. minVect(Vector2(2, 9), 4) -> Vector2(2, 4))
 # @param vector: The vector to apply the minimum to
-# @param min: The minimum value the vector may not pass
-# @result: The vector containing the minimum or higher values
+# @param min_amount: The minimum value to compare the vector to
+# @result: The vector containing the minimal values
 static func minVect(vector: Vector2, min_amount: float) -> Vector2:
 	vector.x = minf(vector.x, min_amount)
 	vector.y = minf(vector.y, min_amount)
 	return vector
 
 
-# Returns the given vector with a maximum value applied (i.e. maxVect(Vector2(2, 9), 4) -> Vector2(4, 9))
+# Returns the given vector with the lowest given vector values applied (i.e. minVectV(Vector2(2, 9), Vector2(3, 8)) -> Vector2(2, 8))
+# @param vector: The vector to apply the minimum to
+# @param min_vector: The minimum vector to compare the vector to
+# @result: The vector containing the minimal values
+static func minVectV(vector: Vector2, min_vector: Vector2) -> Vector2:
+	vector.x = minf(vector.x, min_vector.x)
+	vector.y = minf(vector.y, min_vector.y)
+	return vector
+
+
+# Returns the given vector with the highest given values applied (i.e. maxVect(Vector2(2, 9), 4) -> Vector2(4, 9))
 # @param vector: The vector to apply the maximum to
-# @param max: The maximum value the vector may not pass
-# @result: The vector containing the maximum or lower values
+# @param max_amount: The maximum value to compare the vector to
+# @result: The vector containing the maximum values
 static func maxVect(vector: Vector2, max_amount: float) -> Vector2:
 	vector.x = maxf(vector.x, max_amount)
 	vector.y = maxf(vector.y, max_amount)
+	return vector
+
+
+# Returns the given vector with the highest given vector values applied (i.e. maxVectV(Vector2(2, 9), Vector2(3, 8)) -> Vector2(3, 9))
+# @param vector: The vector to apply the maximum to
+# @param max_vector: The maximum vector to compare the vector to
+# @result: The vector containing the maximum values
+static func maxVectV(vector: Vector2, max_vector: Vector2) -> Vector2:
+	vector.x = maxf(vector.x, max_vector.x)
+	vector.y = maxf(vector.y, max_vector.y)
 	return vector
