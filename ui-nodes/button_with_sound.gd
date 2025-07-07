@@ -4,6 +4,7 @@ extends TextureButton
 # A button with easy settable sounds for button actions
 
 
+export var hover_sound: AudioStream setget _set_hover_sound
 export var press_sound: AudioStream setget _set_press_sound
 export var release_sound: AudioStream setget _set_release_sound
 
@@ -13,6 +14,14 @@ var is_hovered: bool = false
 func _ready():
 	var _bd = connect("button_down", self, "_play_press_sound")
 	var _bu = connect("button_up", self, "_on_press_stop")
+
+
+func call_set_hover_sound(new_sound: AudioStream):
+	call_deferred("_set_hover_sound", new_sound)
+
+func _set_hover_sound(new_sound: AudioStream):
+	hover_sound = new_sound
+	$HoverSound.stream = new_sound
 
 
 func call_set_press_sound(new_sound: AudioStream):
@@ -47,9 +56,17 @@ func _update_hover_state(hovered: bool):
 			_play_release_sound()
 		else:
 			_play_press_sound()
+	elif not is_hovered and hovered:
+		_play_hover_sound()
+		
 	
 	is_hovered = hovered
-	
+
+
+# Play the hover sound
+func _play_hover_sound():
+	if hover_sound:
+		$HoverSound.play()
 
 
 # Play the press sound
