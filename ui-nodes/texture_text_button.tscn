@@ -15,7 +15,7 @@ uppercase = false
 font = null
 font_color = Color( 0, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="." index="2"]
+[node name="Label" type="Label" parent="." index="3"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.0
